@@ -7,15 +7,7 @@ predict customer purchase value from multi-session behavioural data.
 ## Contents
 
 - `Copy_of_22f3002203_notebook_t22025.ipynb`: initial notebook with baseline model.
-- `lightgbm_regressor.py`: script implementing an improved LightGBM model and
-  generating `submission.csv`.
 
-## Usage
-
-Run the Python script inside the Kaggle notebook environment:
-
-```bash
-python lightgbm_regressor.py
 ```
 
 A file named `submission.csv` will be produced with the required
