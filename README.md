@@ -7,6 +7,7 @@ predict customer purchase value from multi-session behavioural data.
 ## Contents
 
 - `Copy_of_22f3002203_notebook_t22025.ipynb`: initial notebook with baseline model.
+- 8ememd-codex/improve-model-to-achieve-r2_score-0.50
 - `lightgbm_regressor.py`: LightGBM model with basic preprocessing.
 - `xgb_regressor.py`: XGBoost pipeline with one-hot encoding and scaling.
 - `xgb_te_regressor.py`: XGBoost model using simple target encoding.
