@@ -4,7 +4,9 @@ import numpy as np
 from sklearn.model_selection import KFold
 from sklearn.metrics import r2_score
 from lightgbm import LGBMRegressor
+wqvk8f-codex/improve-model-to-achieve-r2_score-0.50
 import lightgbm as lgb
+main
 
 # Data paths (Kaggle defaults can be overridden by environment variables)
 TRAIN_PATH = os.getenv('TRAIN_PATH', '/kaggle/input/engage-2-value-from-clicks-to-conversions/train_data.csv')
@@ -24,7 +26,9 @@ def preprocess(df):
         df.drop(columns=['date'], inplace=True)
     if 'sessionStart' in df.columns:
         df['sessionStart'] = pd.to_datetime(df['sessionStart'], errors='coerce')
+wqvk8f-codex/improve-model-to-achieve-r2_score-0.50
         df['sessionStart'] = df['sessionStart'].astype('int64') // 10**9
+main
     return df
 
 train_df = preprocess(train_df)
@@ -40,9 +44,11 @@ for col in cat_cols:
 for col in train_df.columns:
     if col != TARGET and train_df[col].dtype.kind in 'biufc':
         median = train_df[col].median()
+wqvk8f-codex/improve-model-to-achieve-r2_score-0.50
         train_df[col] = train_df[col].fillna(median)
         if col in test_df.columns:
             test_df[col] = test_df[col].fillna(median)
+main
 
 X = train_df.drop(columns=[TARGET])
 y = np.log1p(train_df[TARGET])
@@ -66,7 +72,9 @@ for tr_idx, val_idx in kf.split(X):
     model.fit(
         X_tr, y_tr,
         eval_set=[(X_val, y_val)],
+wqvk8f-codex/improve-model-to-achieve-r2_score-0.50
         callbacks=[lgb.early_stopping(50)],
+main
         verbose=False,
         categorical_feature=cat_cols
     )
