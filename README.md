@@ -11,8 +11,10 @@ predict customer purchase value from multi-session behavioural data.
 - `xgb_regressor.py`: XGBoost pipeline with one-hot encoding and scaling.
 - `xgb_te_regressor.py`: XGBoost model using simple target encoding.
 - `improved_lightgbm.py`: LightGBM pipeline with date feature engineering,
+
   one-hot encoding and a RandomizedSearchCV hyperparameter search using
   5-fold cross-validation over 50 parameter samples.
+
 ## Usage
 
 Run one of the Python scripts inside the Kaggle notebook environment:
