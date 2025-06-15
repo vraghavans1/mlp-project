@@ -89,8 +89,10 @@ X_train, X_val, y_train, y_val = train_test_split(
 search = RandomizedSearchCV(
     pipeline,
     param_distributions=param_distributions,
-    n_iter=10,
-    cv=3,
+
+    n_iter=50,
+    cv=5,
+
     scoring="neg_mean_squared_error",
     n_jobs=-1,
     random_state=42,
